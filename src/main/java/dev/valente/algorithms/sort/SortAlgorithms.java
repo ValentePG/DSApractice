@@ -1,7 +1,7 @@
-package dev.valente.algorithms;
+package dev.valente.algorithms.sort;
 
-public class SearchAlgorithms {
-    private int[] teste = {30, 12, 50, 29, 39, 255, 10, 55, 70};
+public class SortAlgorithms {
+    private int[] teste = {12, 30, 50, 29, 39, 255, 10, 55, 70};
 
     public void bubbleSort(){
 

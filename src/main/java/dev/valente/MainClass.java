@@ -1,13 +1,11 @@
 package dev.valente;
 
-import dev.valente.algorithms.SearchAlgorithms;
-
-import java.util.Arrays;
+import dev.valente.algorithms.sort.SortAlgorithms;
 
 public class MainClass {
     public static void main(String[] args) {
 
-        SearchAlgorithms algorithms = new SearchAlgorithms();
+        SortAlgorithms algorithms = new SortAlgorithms();
 
         algorithms.bubbleSort();
 

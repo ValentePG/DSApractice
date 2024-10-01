@@ -5,6 +5,7 @@ public class SearchAlgorithms {
 
     public void binarySearch(int val){
 
+
     }
 
 }

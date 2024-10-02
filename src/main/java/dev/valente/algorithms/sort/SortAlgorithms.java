@@ -21,11 +21,14 @@ public class SortAlgorithms {
     }
 
     public void selectionSort(int[] teste){
-
+//        O processo se inicia na primeira posição, varre a lista, identifica qual é o menor valor atual do array,
+//        após isto checa se o menor valor atual é menor que o valor da posição inicial, caso seja, ocorre o swap,
+//        e assim em diante
     }
 
     public void insertionSort(int[] teste){
-
+//        Basicamente o processo começa na segunda posição da lista e
+//        vai checando se os números a esquerda são menores e fazendo o swap
     }
 
 

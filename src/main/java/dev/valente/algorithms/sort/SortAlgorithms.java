@@ -20,6 +20,15 @@ public class SortAlgorithms {
         view(teste);
     }
 
+    public void selectionSort(int[] teste){
+
+    }
+
+    public void insertionSort(int[] teste){
+
+    }
+
+
     public void view(int[] teste){
         for(int i = 0; i < teste.length; i++){
             System.out.print(teste[i] + " ");

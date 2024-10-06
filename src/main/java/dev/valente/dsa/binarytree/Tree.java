@@ -34,6 +34,35 @@ public class Tree {
         }
     }
 
+    public void percursoPreOrdem(Tree tree){ // fiz solo
+        if(!isEmpty()){
+            System.out.print(tree.getElemento().getElemento() + " ");
+            if(tree.esq != null){
+                percursoPreOrdem(tree.esq);
+            }
+            if(tree.dir != null){
+                percursoPreOrdem(tree.dir);
+            }
+        }
+    }
+
+    public void percursoPosOrdem(Tree tree){
+
+    }
+
+    public void percursoInOrdem(Tree tree){
+        if(!isEmpty()){
+            if(tree.esq != null){
+                percursoInOrdem(tree.esq);
+            }
+
+            System.out.print(tree.getElemento().getElemento() + " ");
+            if(tree.dir != null){
+                percursoInOrdem(tree.dir);
+            }
+        }
+    }
+
     public boolean busca(int valor){
         if(isEmpty()){
             return false;
@@ -85,6 +114,15 @@ public class Tree {
 
     public Tree getDir() {
         return dir;
+    }
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "elemento=" + elemento +
+                ", esq=" + esq +
+                ", dir=" + dir +
+                '}';
     }
 
     public void setDir(Tree dir) {

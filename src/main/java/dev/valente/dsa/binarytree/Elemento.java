@@ -2,17 +2,17 @@ package dev.valente.dsa.binarytree;
 
 public class Elemento {
 
-    private int elemento;
+    private int val;
 
-    public Elemento(int elemento) {
-        this.elemento = elemento;
+    public Elemento(int val) {
+        this.val = val;
     }
 
-    public int getElemento() {
-        return elemento;
+    public int getVal() {
+        return val;
     }
 
-    public void setElemento(int elemento) {
-        this.elemento = elemento;
+    public void setVal(int val) {
+        this.val = val;
     }
 }

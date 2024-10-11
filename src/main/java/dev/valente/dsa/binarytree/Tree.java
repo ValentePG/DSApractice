@@ -15,14 +15,14 @@ public class Tree {
         }
         else {
             Tree novaArvore = new Tree(novo);
-            if(novo.getElemento() > this.elemento.getElemento()){
+            if(novo.getVal() > this.elemento.getVal()){
                 if(this.dir == null){ // folha?
                     this.setDir(novaArvore);
                 } else {
                     this.dir.inserirElemento(novo);
                 }
 
-            } else if(novo.getElemento() < this.elemento.getElemento()){
+            } else if(novo.getVal() < this.elemento.getVal()){
                 if(this.esq == null){
                     this.setEsq(novaArvore);
 
@@ -34,9 +34,55 @@ public class Tree {
         }
     }
 
+
+    public Tree removerElemento(Elemento removido){
+
+        if(this.elemento.getVal() == removido.getVal()){
+
+            if(this.dir == null && this.esq == null){
+                return null;
+            }
+            else {
+                // filho do lado esquerdo
+                if(this.esq != null && this.dir == null){
+                    return this.esq;
+                }
+                // filho do lado direito
+                else if(this.dir != null && this.esq == null){
+                    return this.dir;
+                }
+                // filho dos 2 lados
+                else{
+                    // maior dentre os menores
+                    Tree aux = this.esq;
+                    while (aux.dir != null){
+                        aux = aux.dir;
+                    }
+                    // troco os elementos da árvore
+                    this.elemento = aux.getElemento();
+                    aux.setElemento(removido);
+
+                    this.esq = esq.removerElemento(removido);
+                }
+
+            }
+
+        } else if(this.elemento.getVal() > removido.getVal()){
+
+            this.esq = this.esq.removerElemento(removido);
+
+        } else if(elemento.getVal() < removido.getVal()){
+
+            this.dir = this.dir.removerElemento(removido);
+
+        }
+        return this;
+
+    }
+
     public void percursoPreOrdem(Tree tree){ // fiz solo
         if(!isEmpty()){
-            System.out.print(tree.getElemento().getElemento() + " ");
+            System.out.print(tree.getElemento().getVal() + " ");
             if(tree.esq != null){
                 percursoPreOrdem(tree.esq);
             }
@@ -47,7 +93,15 @@ public class Tree {
     }
 
     public void percursoPosOrdem(Tree tree){
-
+        if(!isEmpty()){
+            if(tree.dir != null){
+                percursoPosOrdem(tree.dir);
+            }
+            if(tree.esq != null){
+                percursoPosOrdem(tree.esq);
+            }
+            System.out.print(tree.getElemento().getVal() + " ");
+        }
     }
 
     public void percursoInOrdem(Tree tree){
@@ -56,7 +110,7 @@ public class Tree {
                 percursoInOrdem(tree.esq);
             }
 
-            System.out.print(tree.getElemento().getElemento() + " ");
+            System.out.print(tree.getElemento().getVal() + " ");
             if(tree.dir != null){
                 percursoInOrdem(tree.dir);
             }
@@ -67,10 +121,10 @@ public class Tree {
         if(isEmpty()){
             return false;
         }
-        if (this.elemento.getElemento() == valor){
+        if (this.elemento.getVal() == valor){
             return true;
         }else {
-            if(valor > this.elemento.getElemento()) {
+            if(valor > this.elemento.getVal()) {
                 if(this.dir == null){
                     return false;
                 }
@@ -78,7 +132,7 @@ public class Tree {
                     return this.dir.busca(valor); // repassa a responsabilidade para a sub árvore direita
                 }
             }
-            else if(valor < this.elemento.getElemento()){
+            else if(valor < this.elemento.getVal()){
                 if(this.esq == null){
                     return false;
                 }

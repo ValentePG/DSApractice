@@ -8,11 +8,11 @@ public class ReverseNumber {
     public static int reverterNumero(int x){
         int reversed = 0;
 
-        while(x > 10){
+        while(x != 0){
 
             reversed = reversed * 10 + (x % 10);
             x /= 10;
         }
-        return reversed * 10 + x;
+        return reversed;
     }
 }

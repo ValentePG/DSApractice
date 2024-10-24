@@ -13,12 +13,14 @@ public class MainClass {
 
 
 
-
+        System.out.println(" ");
         tree.percursoPreOrdem(tree);
 
-        tree = tree.inverterArvore(tree);
+        System.out.println(" ");
+        tree.percursoInOrdem(tree);
 
-        System.out.println("");
-        tree.percursoPreOrdem(tree);
+
+        System.out.println(" ");
+        tree.percursoPosOrdem(tree);
     }
 }

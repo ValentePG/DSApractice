@@ -12,10 +12,12 @@ public class LinkedList {
         public Node(int data) {
             this.data = data;
             this.next = null;
+
         }
     }
 
     public void showList(){
+
        Node temp = head;
        while(temp != null){
            System.out.print(temp.data + " -> ");
